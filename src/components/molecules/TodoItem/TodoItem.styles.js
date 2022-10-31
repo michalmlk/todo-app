@@ -8,9 +8,15 @@ export const TodoCard = styled.div`
 	margin-bottom: 10px;
 	border-radius: 5px;
 	border: 1px solid #ddd;
-	font-size: 16px;
+	font-size: 18px;
 	max-width: 768px;
 	width: 100%;
+	background-color: #fff;
+
+	p {
+		text-decoration-line: ${({ isDone }) => (isDone ? 'line-through' : 'none')};
+		font-style: ${({ isDone }) => (isDone ? 'italic' : 'normal')};
+	}
 `
 
 export const ButtonArea = styled.div`

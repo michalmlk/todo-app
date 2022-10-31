@@ -17,7 +17,7 @@ export const TodoProvider = ({ children }) => {
 
 	const addTodo = title => {
 		setTodos(prevTodos => {
-			return [{ id: V4(), title }, ...prevTodos]
+			return [{ id: V4(), title, isDone: false }, ...prevTodos]
 		})
 	}
 

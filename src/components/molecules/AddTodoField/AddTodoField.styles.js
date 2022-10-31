@@ -8,18 +8,24 @@ export const TodoInput = styled.div`
 		padding: 10px auto;
 
 		input {
-			height: 30px;
-			padding-left: 10px;
+			height: 40px;
+			padding-left: 20px;
 			border: 1px solid #ddd;
 			border-radius: 5px;
 			width: 100%;
+			font-size: 18px;
+
+			&::placeholder {
+				color: #aaa;
+			}
 		}
 		button {
 			border-radius: 5px;
 			border: 1px solid #ddd;
 			margin-left: 10px;
-			height: 30px;
+			height: 40px;
 			width: 100px;
+			font-size: 18px;
 		}
 	}
 `

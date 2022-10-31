@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
 import { useTodoContext } from '../../../contexts/TodoContext'
+import EditTodoModal from '../EditTodoModal/EditTodoModal'
 import TodoItem from '../TodoItem/TodoItem'
 import { TodoInput, Wrapper, TodoItemsList } from './AddTodoField.styles'
 
 const AddTodoField = () => {
 	const todoTitleRef = useRef()
-	const { addTodo, todos } = useTodoContext()
+	const { addTodo, todos, isEditModalOpen } = useTodoContext()
 
 	const handleSubmit = e => {
 		e.preventDefault()
@@ -23,7 +24,12 @@ const AddTodoField = () => {
 			</TodoInput>
 			<TodoItemsList>
 				{todos.map(todo => {
-					return <TodoItem title={todo.title} id={todo.id} />
+					return (
+						<>
+							<TodoItem title={todo.title} id={todo.id} />
+							{isEditModalOpen && <EditTodoModal todoId={todo.id} />}
+						</>
+					)
 				})}
 			</TodoItemsList>
 		</Wrapper>
