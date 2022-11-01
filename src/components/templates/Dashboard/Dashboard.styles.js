@@ -8,10 +8,10 @@ export const DashboardWrapper = styled.div`
 	width: 100%;
 	min-height: 100vh;
 	padding-top: 10%;
-	background: linear-gradient(180deg, rgba(0, 30, 101, 1) 0%, rgba(9, 12, 13, 1) 100%, rgba(0, 34, 255, 1) 100%);
+	background: ${({ theme }) => theme.backgrounds.backgroundDark};
 
 	h1 {
-		color: #ddd;
+		color: ${({ theme }) => theme.colors.colorDark};
 		font-weight: lighter;
 		margin-bottom: 30px;
 	}

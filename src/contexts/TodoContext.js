@@ -17,11 +17,11 @@ export const TodoProvider = ({ children }) => {
 
 	const addTodo = title => {
 		setTodos(prevTodos => {
-			return [{ id: V4(), title, isDone: false }, ...prevTodos]
+			return [{ id: V4(), title }, ...prevTodos]
 		})
 	}
 
-	const deleteTodo = (todoId, title) => {
+	const deleteTodo = todoId => {
 		const updatedTodos = todos.filter(todo => todo.id !== todoId)
 		setTodos(updatedTodos)
 	}

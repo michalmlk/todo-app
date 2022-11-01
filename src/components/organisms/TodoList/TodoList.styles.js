@@ -58,6 +58,9 @@ export const Wrapper = styled.div`
 
 export const TodoItemsList = styled.div`
 	height: 50vh;
+	padding: 10px;
+	background-color: ${({ todos }) => (todos.length === 0 ? 'transparent' : '#ddd')};
+	border-radius: 5px;
 
 	h3 {
 		font-weight: lighter;

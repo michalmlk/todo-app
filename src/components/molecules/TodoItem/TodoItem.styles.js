@@ -12,6 +12,7 @@ export const TodoCard = styled.div`
 	max-width: 768px;
 	width: 100%;
 	background-color: #fff;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
 	p {
 		text-decoration-line: ${({ isDone }) => (isDone ? 'line-through' : 'none')};

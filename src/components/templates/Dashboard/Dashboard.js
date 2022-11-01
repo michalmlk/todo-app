@@ -1,6 +1,6 @@
 import React from 'react'
 import { TodoProvider } from '../../../contexts/TodoContext'
-import AddTodoField from '../../molecules/AddTodoField/AddTodoField'
+import TodoList from '../../organisms/TodoList/TodoList'
 import { DashboardWrapper } from './Dashboard.styles'
 
 const Dashboard = () => {
@@ -8,7 +8,7 @@ const Dashboard = () => {
 		<TodoProvider>
 			<DashboardWrapper>
 				<h1>Todo list</h1>
-				<AddTodoField />
+				<TodoList />
 			</DashboardWrapper>
 		</TodoProvider>
 	)
