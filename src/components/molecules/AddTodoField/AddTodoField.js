@@ -4,6 +4,7 @@ import TodoItem from '../TodoItem/TodoItem'
 import { TodoInput, Wrapper, TodoItemsList } from './AddTodoField.styles'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Scrollbars from 'react-custom-scrollbars-2'
 
 const AddTodoField = () => {
 	const todoTitleRef = useRef()
@@ -26,9 +27,15 @@ const AddTodoField = () => {
 				</form>
 			</TodoInput>
 			<TodoItemsList>
-				{todos.map(todo => {
-					return <TodoItem title={todo.title} id={todo.id} key={todo.id} />
-				})}
+				<Scrollbars>
+					{todos.length !== 0 ? (
+						todos.map(todo => {
+							return <TodoItem title={todo.title} id={todo.id} key={todo.id} />
+						})
+					) : (
+						<h3>Nothing to do</h3>
+					)}
+				</Scrollbars>
 			</TodoItemsList>
 		</Wrapper>
 	)

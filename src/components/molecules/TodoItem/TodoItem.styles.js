@@ -29,7 +29,7 @@ export const ButtonArea = styled.div`
 		border: none;
 		background-color: transparent;
 		transition: background-color 0.1s;
-		font-size: 28px;
+		font-size: 24px;
 
 		&:hover {
 			cursor: pointer;

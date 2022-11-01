@@ -58,5 +58,10 @@ export const Wrapper = styled.div`
 
 export const TodoItemsList = styled.div`
 	height: 50vh;
-	overflow-y: scroll;
+
+	h3 {
+		font-weight: lighter;
+		color: #ddd;
+		text-align: center;
+	}
 `
