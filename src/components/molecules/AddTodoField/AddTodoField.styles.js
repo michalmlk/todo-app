@@ -9,23 +9,40 @@ export const TodoInput = styled.div`
 
 		input {
 			height: 40px;
-			padding-left: 20px;
 			border: 1px solid #ddd;
-			border-radius: 5px;
 			width: 100%;
 			font-size: 18px;
+			border: none;
+			border-bottom: 1px solid #ddd;
+			background-color: transparent;
+			outline: none;
+			color: #aaa;
 
 			&::placeholder {
 				color: #aaa;
+				transition: all 0.2s ease;
+			}
+
+			&:focus::placeholder {
+				transform: translateX(100%);
+				opacity: 0;
 			}
 		}
 		button {
 			border-radius: 5px;
-			border: 1px solid #ddd;
+			border: 1px solid #aaa;
 			margin-left: 10px;
 			height: 40px;
-			width: 100px;
+			width: 40px;
 			font-size: 18px;
+			color: #ddd;
+			background-color: transparent;
+			transition: all 0.2s ease;
+
+			&:hover {
+				background-color: #fff;
+				color: #000;
+			}
 		}
 	}
 `
@@ -40,6 +57,6 @@ export const Wrapper = styled.div`
 `
 
 export const TodoItemsList = styled.div`
-	max-height: 50vh;
+	height: 50vh;
 	overflow-y: scroll;
 `

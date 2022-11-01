@@ -26,14 +26,19 @@ export const ButtonArea = styled.div`
 	button {
 		width: 35px;
 		height: 35px;
-		border: 1px solid #ddd;
-		border-radius: 50%;
+		border: none;
 		background-color: transparent;
 		transition: background-color 0.1s;
+		font-size: 28px;
 
 		&:hover {
-			background-color: #f2afc3;
 			cursor: pointer;
+		}
+		&:nth-child(1):hover {
+			color: green;
+		}
+		&:nth-child(2):hover {
+			color: red;
 		}
 	}
 `

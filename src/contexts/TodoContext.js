@@ -21,7 +21,7 @@ export const TodoProvider = ({ children }) => {
 		})
 	}
 
-	const deleteTodo = todoId => {
+	const deleteTodo = (todoId, title) => {
 		const updatedTodos = todos.filter(todo => todo.id !== todoId)
 		setTodos(updatedTodos)
 	}
