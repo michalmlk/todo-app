@@ -5,7 +5,6 @@ import { TodoInput, Wrapper, TodoItemsList } from './TodoList.styles'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Scrollbars from 'react-custom-scrollbars-2'
-import PrioritySetter from '../../atoms/PrioritySetter/PrioritySetter'
 
 const TodoList = () => {
 	const todoTitleRef = useRef()
@@ -23,7 +22,6 @@ const TodoList = () => {
 			<TodoInput>
 				<form onSubmit={handleSubmit}>
 					<input type='text' required placeholder='type your todo' ref={todoTitleRef} />
-					<PrioritySetter ref={priorityRef} />
 					<button type='submit'>
 						<FontAwesomeIcon icon={faPlus} />
 					</button>
