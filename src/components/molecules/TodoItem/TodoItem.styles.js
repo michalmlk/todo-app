@@ -7,11 +7,20 @@ export const TodoCard = styled.div`
 	padding: 7px 15px;
 	margin-bottom: 10px;
 	border-radius: 5px;
-	border: 1px solid #ddd;
+	border: 1px solid ${({ theme }) => theme.colors.lightGrey};
 	font-size: 18px;
 	max-width: 768px;
 	width: 100%;
-	background-color: #fff;
+	background-color: ${({ priorityColor, theme }) => {
+		if (priorityColor === 'critical') {
+			return theme.colors.critical
+		} else if (priorityColor === 'can_wait') {
+			return theme.colors.canWait
+		} else if (priorityColor === 'important') {
+			return theme.colors.important
+		}
+		return '#fff'
+	}};
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
 	p {
@@ -36,10 +45,10 @@ export const ButtonArea = styled.div`
 			cursor: pointer;
 		}
 		&:nth-child(1):hover {
-			color: green;
+			color: ${({ theme }) => theme.colors.green};
 		}
 		&:nth-child(2):hover {
-			color: red;
+			color: ${({ theme }) => theme.colors.pinkyRed};
 		}
 	}
 `

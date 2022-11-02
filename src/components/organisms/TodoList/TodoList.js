@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useTodoContext } from '../../../contexts/TodoContext'
 import TodoItem from '../../molecules/TodoItem/TodoItem'
 import { TodoInput, Wrapper, TodoItemsList } from './TodoList.styles'
@@ -8,13 +8,16 @@ import Scrollbars from 'react-custom-scrollbars-2'
 
 const TodoList = () => {
 	const todoTitleRef = useRef()
-	const priorityRef = useRef()
 	const { addTodo, todos } = useTodoContext()
-
+	const [priority, setPriority] = useState('')
 	const handleSubmit = e => {
 		e.preventDefault()
-		addTodo(todoTitleRef.current.value)
+		addTodo(todoTitleRef.current.value, priority)
 		todoTitleRef.current.value = ''
+	}
+
+	const setPriorityHandler = e => {
+		setPriority(e.target.value)
 	}
 
 	return (
@@ -22,6 +25,12 @@ const TodoList = () => {
 			<TodoInput>
 				<form onSubmit={handleSubmit}>
 					<input type='text' required placeholder='type your todo' ref={todoTitleRef} />
+					<select onChange={setPriorityHandler} name='priority' id='priority-select'>
+						<option value=''>Set priority</option>
+						<option value='can_wait'>Can wait</option>
+						<option value='important'>Important</option>
+						<option value='critical'>Critical</option>
+					</select>
 					<button type='submit'>
 						<FontAwesomeIcon icon={faPlus} />
 					</button>

@@ -13,10 +13,10 @@ export const TodoInput = styled.div`
 			width: 100%;
 			font-size: 18px;
 			border: none;
-			border-bottom: 1px solid #ddd;
+			border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 			background-color: transparent;
 			outline: none;
-			color: #aaa;
+			color: ${({ theme }) => theme.colors.colorDark};
 
 			&::placeholder {
 				color: #aaa;
@@ -28,20 +28,32 @@ export const TodoInput = styled.div`
 				opacity: 0;
 			}
 		}
+		select {
+			background-color: transparent;
+			color: ${({ theme }) => theme.colors.lightGrey};
+			font-size: 18px;
+			border: none;
+			border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+			outline: none;
+
+			option:not(first-child) {
+				color: #000;
+			}
+		}
 		button {
 			border-radius: 5px;
-			border: 1px solid #aaa;
+			border: 1px solid ${({ theme }) => theme.colors.colorDark};
 			margin-left: 10px;
 			height: 40px;
 			width: 40px;
 			font-size: 18px;
-			color: #ddd;
+			color: ${({ theme }) => theme.colors.lightGrey};
 			background-color: transparent;
 			transition: all 0.2s ease;
 
 			&:hover {
 				background-color: #fff;
-				color: #000;
+				color: ${({ theme }) => theme.colors.black};
 			}
 		}
 	}

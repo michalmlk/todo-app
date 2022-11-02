@@ -5,6 +5,14 @@ export const theme = {
 	},
 	colors: {
 		colorDark: '#aaa',
-		colorLight: '#000',
+		black: '#000',
+		lightGrey: '#ddd',
+		green: '#34eb86',
+		pinkyRed: '#db1f57',
+		white: '#fff',
+		darkGrey: '#211f20',
+		critical: '#de5d77',
+		important: '#decf5d',
+		canWait: '#5ddea6',
 	},
 }
