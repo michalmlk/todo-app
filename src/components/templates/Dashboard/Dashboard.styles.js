@@ -12,7 +12,7 @@ export const DashboardWrapper = styled.div`
 
 	h1 {
 		color: ${({ theme }) => theme.colors.colorDark};
-		font-weight: lighter;
+		font-weight: normal;
 		margin-bottom: 30px;
 	}
 

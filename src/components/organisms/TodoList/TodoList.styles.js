@@ -12,6 +12,7 @@ export const TodoInput = styled.div`
 			border: 1px solid #ddd;
 			width: 100%;
 			font-size: 18px;
+			font-family: 'Montserrat', sans-serif;
 			border: none;
 			border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 			background-color: transparent;
@@ -71,7 +72,6 @@ export const Wrapper = styled.div`
 export const TodoItemsList = styled.div`
 	height: 50vh;
 	padding: 10px;
-	background-color: ${({ todos }) => (todos.length === 0 ? 'transparent' : '#ddd')};
 	border-radius: 5px;
 
 	h3 {

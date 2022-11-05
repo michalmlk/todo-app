@@ -15,9 +15,9 @@ export const useTodoContext = () => {
 export const TodoProvider = ({ children }) => {
 	const [todos, setTodos] = useLocalStorage('todos', [])
 
-	const addTodo = (title, priority) => {
+	const addTodo = title => {
 		setTodos(prevTodos => {
-			return [{ id: V4(), title, priority }, ...prevTodos]
+			return [{ id: V4(), title }, ...prevTodos]
 		})
 	}
 

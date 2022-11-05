@@ -7,31 +7,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Scrollbars from 'react-custom-scrollbars-2'
 
 const TodoList = () => {
+	const [isDisabled, setIsDisabled] = useState(true)
+
 	const todoTitleRef = useRef()
 	const { addTodo, todos } = useTodoContext()
-	const [priority, setPriority] = useState('')
 	const handleSubmit = e => {
 		e.preventDefault()
-		addTodo(todoTitleRef.current.value, priority)
+		addTodo(todoTitleRef.current.value)
 		todoTitleRef.current.value = ''
+		setIsDisabled(true)
 	}
 
-	const setPriorityHandler = e => {
-		setPriority(e.target.value)
+	const disabledHandler = () => {
+		todoTitleRef.current.value === '' ? setIsDisabled(true) : setIsDisabled(false)
 	}
 
 	return (
 		<Wrapper>
 			<TodoInput>
 				<form onSubmit={handleSubmit}>
-					<input type='text' required placeholder='type your todo' ref={todoTitleRef} />
-					<select onChange={setPriorityHandler} name='priority' id='priority-select'>
-						<option value=''>Set priority</option>
-						<option value='can_wait'>Can wait</option>
-						<option value='important'>Important</option>
-						<option value='critical'>Critical</option>
-					</select>
-					<button type='submit'>
+					<input type='text' required placeholder='type your todo' onChange={disabledHandler} ref={todoTitleRef} />
+					<button type='submit' disabled={isDisabled}>
 						<FontAwesomeIcon icon={faPlus} />
 					</button>
 				</form>
@@ -40,7 +36,7 @@ const TodoList = () => {
 				<Scrollbars>
 					{todos.length !== 0 ? (
 						todos.map(todo => {
-							return <TodoItem title={todo.title} id={todo.id} key={todo.id} />
+							return <TodoItem title={todo.title} id={todo.id} key={todo.id} isCompleted={todo.status} />
 						})
 					) : (
 						<h3>Nothing to do</h3>

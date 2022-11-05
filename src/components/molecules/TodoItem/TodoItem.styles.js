@@ -34,12 +34,13 @@ export const ButtonArea = styled.div`
 	gap: 1rem;
 
 	button {
-		width: 35px;
-		height: 35px;
+		width: 32px;
+		height: 32px;
 		border: none;
 		background-color: transparent;
 		transition: background-color 0.1s;
-		font-size: 24px;
+		font-size: 20px;
+		color: ${({ theme }) => theme.colors.colorDark};
 
 		&:hover {
 			cursor: pointer;
