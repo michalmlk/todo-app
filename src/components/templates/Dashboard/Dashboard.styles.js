@@ -22,3 +22,15 @@ export const DashboardWrapper = styled.div`
 		}
 	}
 `
+export const TodoWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 768px;
+	gap: 2rem;
+	padding: 15px;
+
+	h1 {
+		text-align: center;
+	}
+`

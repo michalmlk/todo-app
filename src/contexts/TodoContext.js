@@ -1,6 +1,5 @@
-import React, { useContext, createContext } from 'react'
+import React, { useContext, createContext, useState } from 'react'
 import { v4 as V4 } from 'uuid'
-import useLocalStorage from '../hooks/useLocalStorage'
 
 export const TodoContext = createContext({
 	todos: [],
@@ -13,7 +12,7 @@ export const useTodoContext = () => {
 }
 
 export const TodoProvider = ({ children }) => {
-	const [todos, setTodos] = useLocalStorage('todos', [])
+	const [todos, setTodos] = useState([])
 
 	const addTodo = title => {
 		setTodos(prevTodos => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const TodoInput = styled.div`
+export const TodoInputWrapper = styled.div`
 	form {
 		width: 100%;
 		display: flex;
@@ -57,26 +57,5 @@ export const TodoInput = styled.div`
 				color: ${({ theme }) => theme.colors.black};
 			}
 		}
-	}
-`
-
-export const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 768px;
-	gap: 2rem;
-	padding: 15px;
-`
-
-export const TodoItemsList = styled.div`
-	height: 50vh;
-	padding: 10px;
-	border-radius: 5px;
-
-	h3 {
-		font-weight: lighter;
-		color: #ddd;
-		text-align: center;
 	}
 `

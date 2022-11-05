@@ -1,14 +1,18 @@
 import React from 'react'
 import { TodoProvider } from '../../../contexts/TodoContext'
-import TodoList from '../../organisms/TodoList/TodoList'
-import { DashboardWrapper } from './Dashboard.styles'
+import { DashboardWrapper, TodoWrapper } from './Dashboard.styles'
+import TodoInput from '../../atoms/TodoInput/TodoInput'
+import TodoItemsList from '../../organisms/TodoItemsList/TodoItemsList'
 
 const Dashboard = () => {
 	return (
 		<TodoProvider>
 			<DashboardWrapper>
-				<h1>Todo list</h1>
-				<TodoList />
+				<TodoWrapper>
+					<h1>Todo List</h1>
+					<TodoInput />
+					<TodoItemsList />
+				</TodoWrapper>
 			</DashboardWrapper>
 		</TodoProvider>
 	)
