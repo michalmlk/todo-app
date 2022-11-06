@@ -5,7 +5,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import StatusFilter from '../StatusFilter/StatusFilter'
 
-const TodoInput = ({ setStatus }) => {
+const TodoInput = () => {
 	const [isDisabled, setIsDisabled] = useState(true)
 
 	const todoTitleRef = useRef()
@@ -25,7 +25,7 @@ const TodoInput = ({ setStatus }) => {
 	return (
 		<TodoInputWrapper>
 			<form onSubmit={handleSubmit}>
-				<input type='text' required placeholder='type your todo' onChange={disabledHandler} ref={todoTitleRef} />
+				<input type='text' required placeholder='Type your todo' onChange={disabledHandler} ref={todoTitleRef} />
 				<StatusFilter onChange={filterTodo} />
 				<button type='submit' disabled={isDisabled}>
 					<FontAwesomeIcon icon={faPlus} />

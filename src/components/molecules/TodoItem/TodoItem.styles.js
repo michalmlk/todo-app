@@ -6,22 +6,23 @@ export const TodoCard = styled.div`
 	align-items: center;
 	padding: 7px 15px;
 	margin-bottom: 10px;
-	border-radius: 5px;
-	border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+	border-radius: 3px;
+	border: 1px solid
+		${({ completed, theme }) => {
+			if (completed === true) return theme.colors.completed
+			return '#fff'
+		}};
 	font-size: 18px;
 	max-width: 768px;
 	width: 100%;
-	background-color: ${({ priorityColor, theme }) => {
-		if (priorityColor === 'critical') {
-			return theme.colors.critical
-		} else if (priorityColor === 'can_wait') {
-			return theme.colors.canWait
-		} else if (priorityColor === 'important') {
-			return theme.colors.important
+	background-color: ${({ completed, theme }) => {
+		if (completed === true) {
+			return theme.colors.completed
 		}
 		return '#fff'
 	}};
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s ease;
 
 	p {
 		text-decoration-line: ${({ completed }) => (completed ? 'line-through' : 'none')};

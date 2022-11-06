@@ -5,23 +5,25 @@ export const TodoInputWrapper = styled.div`
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		padding: 10px auto;
+		padding: 20px 20px 10px;
+		border-radius: 5px;
+		background-color: ${({ theme }) => theme.colors.UIbackground};
 
 		input {
 			height: 40px;
-			border: 1px solid #ddd;
 			width: 100%;
 			font-size: 18px;
 			font-family: 'Montserrat', sans-serif;
 			border: none;
-			border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+			border-bottom: 2px solid ${({ theme }) => theme.colors.lightGrey};
 			background-color: transparent;
 			outline: none;
-			color: ${({ theme }) => theme.colors.colorDark};
+			color: ${({ theme }) => theme.colors.lightGrey};
 
 			&::placeholder {
-				color: #aaa;
+				color: ${({ theme }) => theme.colors.lightGrey};
 				transition: all 0.2s ease;
+				opacity: 0.5;
 			}
 
 			&:focus::placeholder {
@@ -34,7 +36,7 @@ export const TodoInputWrapper = styled.div`
 			color: ${({ theme }) => theme.colors.lightGrey};
 			font-size: 18px;
 			border: none;
-			border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+			border-bottom: 2px solid ${({ theme }) => theme.colors.lightGrey};
 			outline: none;
 
 			option:not(first-child) {
@@ -43,7 +45,7 @@ export const TodoInputWrapper = styled.div`
 		}
 		button {
 			border-radius: 5px;
-			border: 1px solid ${({ theme }) => theme.colors.colorDark};
+			border: 1px solid ${({ theme }) => theme.colors.lightGrey};
 			margin-left: 10px;
 			height: 40px;
 			width: 40px;

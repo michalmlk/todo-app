@@ -8,10 +8,13 @@ export const TodoItemsListWrapper = styled.div`
 	height: 50vh;
 	padding: 10px;
 	border-radius: 5px;
+	padding: 20px 20px 10px;
+	border-radius: 5px;
+	background-color: ${({ theme, todos }) => (todos.length === 0 ? 'transparent' : theme.colors.UIbackground)};
 
 	h3 {
-		font-weight: lighter;
-		color: #ddd;
+		font-weight: normal;
+		color: ${({ theme }) => theme.colors.black};
 		text-align: center;
 	}
 `

@@ -32,5 +32,6 @@ export const TodoWrapper = styled.div`
 
 	h1 {
 		text-align: center;
+		color: ${({ theme }) => theme.colors.lightGrey};
 	}
 `
