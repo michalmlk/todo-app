@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SelectWrapper = styled.select`
-	margin-top: 20px;
+	margin-bottom: 20px;
 	background-color: transparent;
 	color: ${({ theme }) => theme.colors.colorDark};
 	font-size: 18px;

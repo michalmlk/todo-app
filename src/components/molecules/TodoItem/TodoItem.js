@@ -5,28 +5,25 @@ import { faTrashCan, faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const TodoItem = ({ title, id }) => {
-	const { deleteTodo } = useTodoContext()
-	const [isDone, setIsDone] = useState(false)
+const TodoItem = ({ title, id, completed }) => {
+	const { deleteTodo, completeTodos } = useTodoContext()
 
-	const isDoneHandler = () => {
-		setIsDone(prevState => !prevState)
+	const completeTodoHandler = () => {
+		completeTodos(id)
 	}
 
 	return (
-		<>
-			<TodoCard isDone={isDone}>
-				<p>{title}</p>
-				<ButtonArea>
-					<button onClick={isDoneHandler}>
-						{isDone ? <FontAwesomeIcon icon={faArrowRotateLeft} /> : <FontAwesomeIcon icon={faCircleCheck} />}
-					</button>
-					<button onClick={() => deleteTodo(id)}>
-						<FontAwesomeIcon icon={faTrashCan} />
-					</button>
-				</ButtonArea>
-			</TodoCard>
-		</>
+		<TodoCard completed={completed}>
+			<p>{title}</p>
+			<ButtonArea>
+				<button onClick={completeTodoHandler}>
+					{completed === true ? <FontAwesomeIcon icon={faArrowRotateLeft} /> : <FontAwesomeIcon icon={faCircleCheck} />}
+				</button>
+				<button onClick={() => deleteTodo(id)}>
+					<FontAwesomeIcon icon={faTrashCan} />
+				</button>
+			</ButtonArea>
+		</TodoCard>
 	)
 }
 

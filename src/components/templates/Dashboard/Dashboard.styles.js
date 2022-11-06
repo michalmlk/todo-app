@@ -27,7 +27,7 @@ export const TodoWrapper = styled.div`
 	flex-direction: column;
 	width: 100%;
 	max-width: 768px;
-	gap: 2rem;
+	gap: 1rem;
 	padding: 15px;
 
 	h1 {

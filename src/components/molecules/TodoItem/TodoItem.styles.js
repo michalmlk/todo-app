@@ -24,8 +24,7 @@ export const TodoCard = styled.div`
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
 	p {
-		text-decoration-line: ${({ isDone }) => (isDone ? 'line-through' : 'none')};
-		font-style: ${({ isDone }) => (isDone ? 'italic' : 'normal')};
+		text-decoration-line: ${({ completed }) => (completed ? 'line-through' : 'none')};
 	}
 `
 

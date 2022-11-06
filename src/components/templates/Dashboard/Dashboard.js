@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoProvider } from '../../../contexts/TodoContext'
+import { TodoProvider, useTodoContext } from '../../../contexts/TodoContext'
 import { DashboardWrapper, TodoWrapper } from './Dashboard.styles'
 import TodoInput from '../../atoms/TodoInput/TodoInput'
 import TodoItemsList from '../../organisms/TodoItemsList/TodoItemsList'

@@ -17,13 +17,13 @@ export const TodoItemsListWrapper = styled.div`
 `
 
 const TodoItemsList = () => {
-	const { todos } = useTodoContext()
+	const { todos, filteredTodos } = useTodoContext()
 	return (
 		<TodoItemsListWrapper todos={todos}>
 			<Scrollbars>
-				{todos.length !== 0 ? (
-					todos.map(todo => {
-						return <TodoItem title={todo.title} id={todo.id} key={todo.id} isCompleted={todo.status} />
+				{filteredTodos.length !== 0 ? (
+					filteredTodos.map(todo => {
+						return <TodoItem title={todo.title} id={todo.id} key={todo.id} completed={todo.completed} />
 					})
 				) : (
 					<h3>Nothing to do</h3>
